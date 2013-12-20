@@ -1,6 +1,6 @@
 {
-    "name": "Présentation de l'outil",
-    "description": "Outil de création de site internet, sans base de données.<br />Uniquement basé sur l'utilisation de fichiers markdown.",
+    "name": "Alambic",
+    "description": "Alambic est un outis de création de site sans base de données ni administrations.<br />Basé sur laravel, et des thèmes bootstrap 3, vous pourrez créer différents sites.<br /><br />Pour l'utiliser rien de plus simple...",
     "keywords": ["markdown", "laravel","bootstrap"],
-    "logo": "_images/logo.png"
+    "logo": "_images/alambic.png"
 }

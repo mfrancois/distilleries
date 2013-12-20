@@ -1,3 +1,10 @@
+<iframe src="http://ghbtns.com/github-btn.html?user=mfrancois&repo=alambic&type=watch&count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+<iframe src="http://ghbtns.com/github-btn.html?user=mfrancois&repo=alambic&type=fork&count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+<iframe src="http://ghbtns.com/github-btn.html?user=mfrancois&type=follow&count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe>
+
 # Présentation
 
 - [Alambic](#alamabic)
@@ -7,6 +14,9 @@
 
 <a name="alambic"></a>
 ## Alambic [![GH version](https://badge-me.herokuapp.com/api/gh/mfrancois/alambic.png)](http://badges.enytc.com/for/gh/mfrancois/alambic)
+
+
+![logo](/markdown/alambic/_images/alambic.png)
 
 Alambic est un outis de création de site sans base de données ni administrations.
 Basé sur laravel, et des thèmes bootstrap 3, vous pourrez créer différents sites.

@@ -231,3 +231,6 @@ li.L7,
 li.L9 {
     /* */
 }
+
+
+img[alt=logo] { padding-left: 25%;}

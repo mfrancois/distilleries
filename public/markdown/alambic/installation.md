@@ -14,7 +14,7 @@
 Dans un premier temps récupérez le projet, faites un checkout avec le nom que vous désirez :
 
 
-    git@github.com:mfrancois/laravel-markdown-documentation.git projet_test
+    git@github.com:mfrancois/alambic.git projet_test
 
 
 Une fois fait allez dans le projet et installer les dépendances a l'aide de composer

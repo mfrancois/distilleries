@@ -21,6 +21,8 @@ return array(
         'bootstrap' => 'success',
         'laravel'   => 'danger',
         'markdown'  => 'info',
+        'jquery'    => 'primary',
+        'plupload'  => 'default',
     ),
     'max_item_in_menu_top'   => 5,
     'default_file_in_folder' => 'index'
