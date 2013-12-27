@@ -3,9 +3,17 @@
 View::composer('header.menu', function ($view)
 {
     $uri = Request::segment(1);
-    $name = Route::currentRouteName();
 
-    if ($uri != null && $name != 'search' )
+    if (Route::current() != NULL)
+    {
+        $name = Route::currentRouteName();
+    }
+    else
+    {
+        $name = '';
+    }
+
+    if ($uri != null && $name != 'search')
     {
         $projects         = Menu::top(public_path('markdown'), Request::segment(1));
         $selected_project = false;
@@ -25,16 +33,25 @@ View::composer('header.menu', function ($view)
     }
 
     $view->with('selected_project', $selected_project)
-         ->with('projects', $projects);
+        ->with('projects', $projects);
 });
 
 
 View::composer('header.meta', function ($view)
 {
     $uri = Request::segment(1);
-    $name = Route::currentRouteName();
 
-    if ($uri != null && $name != 'search' )
+    if (Route::current() != NULL)
+    {
+        $name = Route::currentRouteName();
+    }
+    else
+    {
+        $name = '';
+    }
+
+
+    if ($uri != null && $name != 'search')
     {
         $project = Menu::detail(public_path('markdown') . DIRECTORY_SEPARATOR . Request::segment(1));
     }
@@ -65,6 +82,13 @@ View::composer('project.menu', function ($view)
     $html_menu = Menu::generate_html($menu, $path);
 
     $view->with('menu', $html_menu);
+});
+
+
+View::composer('footer.analytics', function ($view)
+{
+    $value = Request::server('HTTP_HOST');
+    $view->with('host', $value);
 });
 
 

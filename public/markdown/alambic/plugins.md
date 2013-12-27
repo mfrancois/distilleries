@@ -5,6 +5,8 @@
 - [Recherche](#search)
 - [Recherche par tags](#search_by_tag)
 - [Impression](#print)
+- [Google analytics](#ga)
+- [Disqus](#ds)
 
 <a name="language"></a>
 ## Internationalisation
@@ -110,3 +112,34 @@ Celle permettra de rechercher par thèmes.
 
 Dans le menu vous avez un menu d'action. Dans ce dernier vous pouvez voir la version imprimable.
 Cella affichera l'intégralité de votre projet pour l'imprimé, voir même le convertir en pdf.
+
+
+<a name="ga"></a>
+## Google analytics
+Vous pouvez utiliser google analytics pour le tracking de votre site.
+Pour ce faire rendez vous dans le fichier de configuration `/app/config/project.php`.
+
+Vous devriez voir deux champs concernant analytics :
+
+    'use_analytics'          => true,
+    'analytics_uid'          => 'UA-****',
+
+
+Vous pouvez passer `use_analytics` à `true` ou `false`, pour activer le tracking.
+Si vous utilisez analytics vous devez savoir que chaque site à sont uid.
+Il faut donc vous rendre sur le [google](https://www.google.com/analytics) pour récupérer ce dernier et l'injecter dans la configuration `analytics_uid`.
+
+
+<a name="ds"></a>
+## Disqus
+Vous pouvez utiliser [Disqus](http://disqus.com/), pour la gestion de vos commentaires.
+Pour ce faire rendez vous dans le fichier de configuration `/app/config/project.php`.
+
+Vous devriez voir deux champs concernant disqus :
+
+     'use_comment'            => true,
+     'disqus_shortname'       => '****',
+
+
+Vous pouvez passer `use_comment` à `true` ou `false`, pour activer les commentaires.
+Si vous utilisez disqus vous devez savoir qu'il vous faut un shortname, il suffit de vous rendre sur [leurs site](http://disqus.com/) et dans générer un puis de le coller dans `disqus_shortname`.

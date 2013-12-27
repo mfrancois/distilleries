@@ -14,6 +14,8 @@ return array(
     'file_configration'      => 'configuration.json',
     'use_social'             => true,
     'use_comment'            => true,
+    'use_analytics'          => true,
+    'analytics_uid'          => 'UA-35954315-3',
     'disqus_shortname'       => 'distilleries',
     'publisher'              => 'b430fc22-05a9-49c6-b524-64fa4da759f9',
     'theme'                  => 'yeti',

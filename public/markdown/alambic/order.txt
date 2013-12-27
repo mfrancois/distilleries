@@ -3,3 +3,4 @@ installation | Installation
 allimentation | Allimentation
 theme | Thème
 plugins | Plugins
+changelog | Changelog
