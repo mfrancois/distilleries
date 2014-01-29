@@ -14,7 +14,7 @@ return array(
     */
 
     "readmore"          => "Lire la suite",
-    "title"             => 'Alambic',
+    "title"             => 'La Distillerie',
     "description"       => "",
     "keyword"           => "",
     'menu_toogle'       => "Toggle navigation",
