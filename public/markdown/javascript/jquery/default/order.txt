@@ -1,2 +1,2 @@
-index | Bootstrap plugin jQuery
-prototype | Bootstrap application (avec jQuery)
+index | Plugin jQuery
+prototype | Aplication (avec jQuery)

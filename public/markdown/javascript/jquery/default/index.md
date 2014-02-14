@@ -8,7 +8,7 @@
 
 <a name="doc-presentation"></a>
 ## Présentation
-Cette structure permet la création de plugins jquery multi instanciable avec passage de paramètres.
+Cette structure permet la création de plugins jQuery multi instanciable avec passage de paramètres.
 Vous pouvez retrouver ces fichiers [sur mon Gist](https://gist.github.com/mfrancois/9003066).
 L'utilisation de plugins est faite pour créer du code réutilisable et sufisament générique pour correspondre à un besoin.
 
@@ -24,6 +24,7 @@ L'utilisation de plugins est faite pour créer du code réutilisable et sufisame
 Dans cette exemple je mettrais deux fichier, le fichier `distExemple.js` qui contiendras mon plugin et le fichier `index.html` qui montreras une instanciation.
 
 ### distExemple.js
+
 Le nom du fichier est à changer (dist Préfix de distilleries), il faut remplacer `distExemple` par le nom de votre plugin.
 Il faut aussi remplacer `distExemple` dans le code javascript.
 
@@ -69,6 +70,7 @@ Il faut aussi remplacer `distExemple` dans le code javascript.
     })(jQuery);
 
 
+
 ### Ajouts de méthodes
 Vous pouvez ajouter des méthodes dans la partie `prototype`.
 
@@ -80,7 +82,7 @@ Vous pouvez ajouter des méthodes dans la partie `prototype`.
 
 
 ### Préfix des selecteurs
-Comme vous vous trouvez dans un plugins qui s'applique à un élément DOM il est conseillez d'utiliser un scope pour vous selections.
+Comme vous vous trouvez dans un plugins qui s'applique à un élément DOM il est conseillez d'utiliser un scope pour vos séléctions.
 
      initData: function()
      {
@@ -89,10 +91,12 @@ Comme vous vous trouvez dans un plugins qui s'applique à un élément DOM il es
 
 
 
-`this.settings.selectorPagination` fait appel au paramètres passé soit à l'instanciation soit par défault dans l'objet `default`.
-`this.element` est l'objet sur le quel s'applique l'instance du plugins.
-Nous récupérons donc la pagination en fonction de cette anglobeur.
+* `this.settings.selectorPagination` fait appel aux paramètres passés soit à l'instanciation soit par défaut dans l'objet `default`.
+* `this.element` est l'objet sur le quel s'applique l'instance du plugins.
 
+<div class="alert alert-info">
+Nous récupérons donc la pagination en fonction de cette anglobeur.
+</div>
 
 ### Rester dans le scope
 Vous pouvez appeller une méthode en interne à l'aide du pointeur `this`.
