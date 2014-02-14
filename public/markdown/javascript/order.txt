@@ -1,0 +1,2 @@
+jquery | jQuery <span class="badge badge-important">In progress ...</span>
+angular | AngularJS <span class="badge badge-important">In progress ...</span>
