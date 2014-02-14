@@ -1,6 +1,6 @@
 {
     "name": "Git",
-    "description": "",
+    "description": "Tout ce qu'il faut savoir sur Git, les IDE, quelques lignes de commande et un bon workflow pour vos projets.",
     "keywords": ["git"],
     "logo": "_images/git.png"
 }
