@@ -15,7 +15,7 @@
 <a name="validupload"></a>
 ## validUpload [![BOWER version](https://badge-me.herokuapp.com/api/bower/mfrancois/validUpload.png)](http://badges.enytc.com/for/bower/mfrancois/validUpload) [![GH version](https://badge-me.herokuapp.com/api/gh/mfrancois/validUpload.png)](http://badges.enytc.com/for/gh/mfrancois/validUpload)
 
-![logo](/markdown/validupload/_images/js_logo.png)
+![logo](/markdown/validupload/_images/validupload.png)
 
 validUpload est basé sur plupload et validationEngine et twitter bootsrap.
 Ce dernier est fait pour faciliter l'utilisation et la réutilisation des deux javascript.
