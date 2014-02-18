@@ -1,2 +1,2 @@
 index | Plugin jQuery
-prototype | Aplication (avec jQuery)
+prototype | Application (avec jQuery)

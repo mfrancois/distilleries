@@ -1,4 +1,4 @@
-# Aplication (avec jQuery)
+# Application (avec jQuery)
 
 
 ## Contents
