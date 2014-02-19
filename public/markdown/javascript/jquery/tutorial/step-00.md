@@ -4,14 +4,23 @@
 - [GIT](#doc-git)
 - [IDE](#doc-ide)
 - [Mes premiers pas](#doc-ppa)
-- [Configuration](#doc-config)
+    - [Hello Worl !](#doc-hellow)
+        - [Etape 1 : Affiche](#doc-affiche)
+        - [Etape 2 : Utilisation du DOM](#doc-dom)
+        - [Etape 3 : Les évènements](#doc-event)
+        - [Etape 4 : Externalisation du code](#doc-ext)
+        - [Etape 5 : Initialisation du code suite à l'externalisation](#doc-init)
+    - [Tic Tac Toe](#doc-morpion)
 
 <a name="doc-content"></a>
 ## Contents
+Dans ce tutorial nous allons commencer par l'utilisation de javascript sans librairie ni framework.
+Cella vas nous permettrent de voirs quelques notions de bases qu'il ne faut jamais perdres de vue lors de la programmation javascript.
+Nous allons voir différentes partie pour l'utilisation du javascript et nous finirons par la création d'un petit jeux simple le Tic Tac Toe.
+
 
 Tout au long de ce tutorial vous allez être amené à récupérer divers branches.
 Je vous invite à crée une copie du repository pour travailler et une copie pour suivre les explications.
-
 
 <div class="alert alert-info">
 Au long de ce premier tutorial j'utilise des fonctions qui fontionne sur des navigateurs récent. Je ne m'occupe pas de la rétrocompatibilité pour éviter de trop surcharger le code.
@@ -42,9 +51,11 @@ Une fois le projet ouvert vous devriez avoir une arborescence comme ceci :
 Ce tutorial traiteras des manipulations javascript de bases.
 Dans cette exercice nous allons voir comment manipuler des éléments du `DOM` et gérer quelques évènements.
 
+<a name="doc-hellow"></a>
 ### Hello Worl !
 
-#### Etape 1
+<a name="doc-affiche"></a>
+#### Etape 1 : Affiche
 Dans le monde de la programmation, nous commençons généralement par l'affichage du mot "Hello World".
 Cette convention assez simple permet une utilisation de bases de chaque languages.
 
@@ -61,7 +72,8 @@ Si vous exécutez la page dans votre navigateur <http://localhost/javascript-tut
 
 <div class="alert alert-info">Vous pouvez retrouver le fichier ici https://gist.github.com/mfrancois/9076206#file-etape_1-html</div>
 
-#### Etape 2
+<a name="doc-dom"></a>
+#### Etape 2 : Utilisation du DOM
 Maintenant que vous affichez des alerts nous allons voir comment injecter cette phrase dans le contenue de votre page.
 Pour ce faire nous allons écrire le code javascript qui écrira dans un div cette phrase.
 Pour ce faire ajouter la balise suivant entre la balise body :
@@ -98,9 +110,10 @@ Dans notre cas nous nous en servons pour injecter le contenu de la chaine dans l
 
 <div class="alert alert-info">Vous pouvez retrouver le fichier ici https://gist.github.com/mfrancois/9076206#file-etape_2-html</div>
 
-### Etape 3
-Maintenant nous allons voir les évènements.
-Alors qu'es ce qu'un évènement. C'est très simple un évènement est une action qui déclanche un appel vers une listes de functions.
+<a name="doc-event"></a>
+### Etape 3 : Les évènements
+Alors qu'es ce qu'un évènement.
+C'est très simple un évènement est une action qui déclanche un appel vers une listes de functions.
 
 Vous me direz qu'elle est l'utilité ? Simplement détecter quand un utilisateur tape sur son clavier, ou alors quand il clique sur un élément ou même s'il redimentionne son navigateur.
 Il faut garder à l'esprit que le javascript est un language client et donc il permet d'intéragir avec lui.
@@ -142,8 +155,8 @@ Pour avoir plus d'informations sur les informations contenu dans `style`, je vou
 
 <div class="alert alert-info">Vous pouvez retrouver le fichier ici https://gist.github.com/mfrancois/9076206#file-etape_3-html</div>
 
-
-### Etape 4
+<a name="doc-ext"></a>
+### Etape 4 : Externalisation du code
 Depuis le début nous plaçons notre code javascript dans le corp de la page html.
 Cette technique n'est pas très belle et peut recommandé.
 Il faut externaliser le code pour faciliter la lecture et la maintenance.
@@ -155,7 +168,7 @@ Pour ce faire rien de plus simple :
 * Placer l'inclusion du fichier dans le head de l'application.
 
 
-        <script type="text/javascript" src="app.js" />
+        <script type="text/javascript" src="app.js" ></script>
 
 
 Vous devez vous retrouver avec deux fichier l'un qui ressamble à
@@ -199,13 +212,14 @@ Comme nous manipulons le DOM mais que ce dernier n'est pas construit rien ne s'a
 
 Pour faire fonctionner ce code je vous invite à aller faire l'étape 5
 
-### Etape 5
+<a name="doc-init"></a>
+### Etape 5 : Initialisation du code suite à l'externalisation
 Dans l'étape précédente nous avons vus comment externaliser un fichier.
 Nous avons vue aussi que cette externalisation rend notre code non fonctionnel.
 Pas de panique nous allons voir comment rendre notre code exécutable par le navigateur quand se dernier à compilé le DOM.
 
 Très simplement il faut garder à l'esprit qu'une page html est un enssamble de balises représentant des éléments.
-Ces éléments sont compiler par le moteur javascript pour former des noeud c'est ce qu'on appel le DOM
+Ces éléments sont compiler par le moteur javascript pour former des noeud c'est ce qu'on appel le DOM.
 
 >Le Document Object Model (ou DOM) est un standard du W3C qui décrit une interface indépendante de tout langage de programmation et de toute plate-forme, permettant à des programmes informatiques et à des scripts d'accéder ou de mettre à jour le contenu, la structure ou le style de documents XML et HTML1. Le document peut ensuite être traité et les résultats de ces traitements peuvent être réincorporés dans le document tel qu'il sera présenté.
 
@@ -239,11 +253,10 @@ Il n'est pas spécifique à l'objet `window`, il peut marcher sur d'autres élé
 
 <div class="alert alert-info">Vous pouvez retrouver le fichier ici https://gist.github.com/mfrancois/9076206#file-app_etape_5-js</div>
 
+<a name="doc-morpion"></a>
+## Tic Tac Toe
+Dans cette partie nous allons crée une morpion (Tic Tac Toe de son vrai nom).
 
-
-
-### Etape 6
-Morpion
 
 
 
