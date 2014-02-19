@@ -20,17 +20,12 @@
 
 <a name="doc-content"></a>
 ## Contents
-Dans ce tutorial nous allons commencer par l'utilisation de javascript sans librairie ni framework.
-Cella vas nous permettrent de voirs quelques notions de bases qu'il ne faut jamais perdres de vue lors de la programmation javascript.
+Dans ce tutorial nous allons refaire les étapes du totorial [0 - Manipulation de base](/javascript/jquery/tutorial/step-00) mais cette fois à l'aide de jQuery
 Nous allons voir différentes partie pour l'utilisation du javascript et nous finirons par la création d'un petit jeux simple le Tic Tac Toe.
 
 
 Tout au long de ce tutorial vous allez être amené à récupérer divers branches.
 Je vous invite à crée une copie du repository pour travailler et une copie pour suivre les explications.
-
-<div class="alert alert-info">
-Au long de ce premier tutorial j'utilise des fonctions qui fontionne sur des navigateurs récent. Je ne m'occupe pas de la rétrocompatibilité pour éviter de trop surcharger le code.
-</div>
 
 
 <a name="doc-git"></a>
@@ -39,9 +34,9 @@ Au long de ce premier tutorial j'utilise des fonctions qui fontionne sur des nav
 Dans un premier temps vous devez récupérer le projet.
 Pour ce faire il vous suffit de taper a commande suivante
 
-    git clone -v --recurse-submodules --progress --branch tutorial/step_00 "https://github.com/mfrancois/javascript-tutorial.git"
+    git clone -v --recurse-submodules --progress --branch tutorial/step_01 "https://github.com/mfrancois/javascript-tutorial.git"
 
-Une fois fini vous devriez avoir votre projet sur la branche `tutorial/step_00`.
+Une fois fini vous devriez avoir votre projet sur la branche `tutorial/step_01`.
 
 <a name="doc-ide"></a>
 ## IDE
@@ -50,14 +45,14 @@ A présent ouvrez le projet dans votre IDE favori (pour ma part PhpStorm).
 Une fois le projet ouvert vous devriez avoir une arborescence comme ceci :
 
 
-![IDE](/markdown/javascript/_images/jquery/tutorial/step_0/ide.jpg)
+![IDE](/markdown/javascript/_images/jquery/tutorial/step_1/ide.jpg)
 
-Le dossier step_00 contient les différentes étapes fonctionnel.
+Le dossier step_01 contient les différentes étapes fonctionnel.
 Vous pouvez vous en inspirez en cas de soucis particulier.
 
 <a name="doc-ppa"></a>
 ## Mes premiers pas
-Ce tutorial traiteras des manipulations javascript de bases.
+Ce tutorial traiteras des manipulations javascript de bases à l'aide de jQuery.
 Dans cette exercice nous allons voir comment manipuler des éléments du `DOM` et gérer quelques évènements.
 
 <a name="doc-hellow"></a>
@@ -65,31 +60,23 @@ Dans cette exercice nous allons voir comment manipuler des éléments du `DOM` e
 
 <a name="doc-affiche"></a>
 #### Etape 1 : Affiche
-Dans le monde de la programmation, nous commençons généralement par l'affichage du mot "Hello World".
-Cette convention assez simple permet une utilisation de bases de chaque languages.
+L'étape 1 est identique au précédent tutorial c'est pourquoi je ne vais pas répéter le contenu de ce dernier.
 
-Dans un premier temps nous allons juste afficher dans une alert cette phrase.
-Pour ce faire ajouter le code suivant  dans la balise body :
-
-    <script type="text/javascript">
-        alert('Hello World !');
-    </script>
-
-Si vous exécutez la page dans votre navigateur <http://localhost/javascript-tutorial/>, vous devriez voir
-
-<div class="alert alert-warning">
-L'utilisation de localhost est possible que si vous avez un serveur local type Uwamp ou Wamp d'installé.
-Je vous le conseil car par la suites vous risques d'êtres bloqué par les protocoles de sécurités du navigateur.
-</div>
-
-![alert](/markdown/javascript/_images/jquery/tutorial/step_0/alert.jpg)
-
-<div class="alert alert-info">Vous pouvez retrouver le fichier ici https://gist.github.com/mfrancois/9076206#file-etape_1-html</div>
+[Etape 1 : Affiche](/javascript/jquery/tutorial/step-00#doc-affiche)
 
 <a name="doc-dom"></a>
 #### Etape 2 : Utilisation du DOM
 Maintenant que vous affichez des alerts nous allons voir comment injecter cette phrase dans le contenue de votre page.
-Pour ce faire nous allons écrire le code javascript qui écrira dans un div cette phrase.
+
+
+Avant toute chose vous avez put constater que dans le header de l'application il y avait cette ligne :
+
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+Cette ligne permet de charger la librairie jQuery à l'aide de Google Hosted.
+Cette plateforme permet de charger des librairie rapidement et de façons stable <https://developers.google.com/speed/libraries/devguide>.
+
+Pour injecter la phrase nous allons écrire le code javascript qui écrira dans un div cette phrase.
 Pour ce faire ajouter la balise suivant entre la balise body :
 
     <div id="hello"></div>
@@ -97,32 +84,24 @@ Pour ce faire ajouter la balise suivant entre la balise body :
 En dessous de ce dernier ajoutez le javascript qui inject la phrase :
 
     <script type="text/javascript">
-        document.getElementById('hello').innerHTML = "Hello World !";
+        jQuery('#hello').html("Hello World !");
     </script>
 
 
 ![innerhtml](/markdown/javascript/_images/jquery/tutorial/step_0/innerhtml.jpg)
 
+Pour selectionner un élément du DOM avec jQuery il vous suffit d'utiliser les selectors.
+Dans notre car nous cherchons l'élément qui à pour id hello. Les selector se raproche des selecteurs en CSS.
+Vous pouvez voir la liste des ces derniers sur le site de jQuery <http://api.jquery.com/category/selectors/>.
+Un selecteur correctement formé peut vous permettre de gagner du temps d'éxécution sur les navigateurs.
 
-`document` est l'objet qui content le html de votre page. Il existe plusieurs objets de bases les deux plus courrent concernant la page est `window` et `document`.
-L'objet `window` représente la fenêtre de votre navigateur.
-Pour résupérer des éléments de vote HTML vous possédé une batterie de selecteurs.
-Cellui utilisé ici est `document.getElementById`. Il retourne l'élément du DOM qui à pour attribut `id` correspondant au paramètre. Dans notre cas le `id="hello"`.
-
-
- Il existent d'autres selecteur comme :
-
- Selecteur | Résultat
- ---------- | ---------
- `document.getElementById` | Retourne l'élément DOM par rapport à son identifiant.
- `document.getElementsByClassName` | Retourne les éléments par rapport à leurs classes.
- `document.getElementsByTagName` | Retourne les éléments par rapport à leur type (ex : div, input, p, span).
-
-
-Pour finir l'attribut `innerHTML` permet de récupérer, ou d'initiliser, le contenu html d'un élément du DOM.
+La fonction `html` permet de récupérer, ou d'initialiser le contenu html d'un élément du DOM.
 Dans notre cas nous nous en servons pour injecter le contenu de la chaine dans la div.
 
-<div class="alert alert-info">Vous pouvez retrouver le fichier ici https://gist.github.com/mfrancois/9076206#file-etape_2-html</div>
+Vous pouvez utiliser des appels à jQuery à l'aide de `jQuery` ou de `$`.
+Je vous conseil d'utiliser `jQuery`, qui permet d'évitez les conflit avec d'autres librairies si jQuery est inclut en mode compatibilité.
+
+<div class="alert alert-info">Vous pouvez retrouver le fichier ici https://gist.github.com/mfrancois/6d47fb64847e7c2fe0aa#file-etape_2-hml</div>
 
 <a name="doc-event"></a>
 ### Etape 3 : Les évènements
@@ -134,14 +113,16 @@ Il faut garder à l'esprit que le javascript est un language client et donc il p
 
 Nous allons éssayer de capter le clique sur notre élément Hello World et au click changer le background de ce dernier.
 
-     document.getElementById('hello').addEventListener('click',function(event){
-        event.preventDefault();
-        event.target.style.backgroundColor = "#00FFFF";
+     jQuery('#hello').off('click').on('click',function(event){
+         event.preventDefault();
+         jQuery(event.target).css({
+             'background-color':'#00FFFF'
+         });
+     });
 
-    });
-
-Toujours pareil nous récupérons l'élément dans le DOM, cette fois nous utilisons `addEventListener`.
-Cette fonction permet d'attacher des évènement à un objet et d'associer une fonction à cette évènement.
+Toujours pareil nous récupérons l'élément dans le DOM, cette fois nous utilisons `off` et `on`.
+`off` permet de supprimer tous les écouteur sur un évènement ou un groupe d'évènement donnée.
+La fonction `on` permet d'attacher des évènement à un objet et d'associer une fonction à cette évènement.
 Dans notre cas nous attachons une fonction dite annonyme.
 
 > Les fonctions anonymes sont des fonctions n'ayant pas de nom.
@@ -155,10 +136,13 @@ Cette ligne permet d'empécher la propagation de l'évènement click plus loins.
 Très pratique quand vous utiliser des évènements de click sur des liens.
 
 
-    event.target.style.backgroundColor = "#00FFFF";
+    jQuery(event.target).css({
+         'background-color':'#00FFFF'
+     });
 
 Permet de changer la couleur d'arrière plans sur un élément du DOM.
-Pour avoir plus d'informations sur les informations contenu dans `style`, je vous invite à aller sur <http://www.w3schools.com/jsref/dom_obj_style.asp>
+La méthode `css` prend un objet et permet de modifier nimporte quel attribut css sur un objet directement.
+
 
 #### Avant le click
 ![avant](/markdown/javascript/_images/jquery/tutorial/step_0/innerhtml.jpg)
@@ -167,7 +151,7 @@ Pour avoir plus d'informations sur les informations contenu dans `style`, je vou
 ![apres](/markdown/javascript/_images/jquery/tutorial/step_0/click.jpg)
 
 
-<div class="alert alert-info">Vous pouvez retrouver le fichier ici https://gist.github.com/mfrancois/9076206#file-etape_3-html</div>
+<div class="alert alert-info">Vous pouvez retrouver le fichier ici https://gist.github.com/mfrancois/6d47fb64847e7c2fe0aa#file-etape_3-html</div>
 
 <a name="doc-ext"></a>
 ### Etape 4 : Externalisation du code
@@ -192,32 +176,26 @@ Vous devez vous retrouver avec deux fichier l'un qui ressamble à
     <html>
     <head>
         <title>Tutorial Javascript</title>
-        <script type="text/javascript" src="app.js" ></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
     </head>
     <body>
     <div id="hello"></div>
-    <script type="text/javascript">
-    </script>
-
     </body>
     </html>
 
 
-<div class="alert alert-info">Vous pouvez retrouver le fichier ici https://gist.github.com/mfrancois/9076206#file-etape_4-html</div>
-
-
-
 Et l'autre qui ressamble à
 
-    document.getElementById('hello').innerHTML = "Hello World !";
-    document.getElementById('hello').addEventListener('click',function(event){
+    jQuery('#hello').html("Hello World !");
+    jQuery('#hello').off('click').on('click',function(event){
         event.preventDefault();
-        event.target.style.backgroundColor = "#00FFFF";
-
+        jQuery(event.target).css({
+            'background-color':'#00FFFF'
+        });
     });
 
 
-<div class="alert alert-info">Vous pouvez retrouver le fichier ici https://gist.github.com/mfrancois/9076206#file-app_etape_4-js</div>
 
 
 Là vous me dites mais rien ne s'affiche.
@@ -238,38 +216,28 @@ Ces éléments sont compiler par le moteur javascript pour former des noeud c'es
 >Le Document Object Model (ou DOM) est un standard du W3C qui décrit une interface indépendante de tout langage de programmation et de toute plate-forme, permettant à des programmes informatiques et à des scripts d'accéder ou de mettre à jour le contenu, la structure ou le style de documents XML et HTML1. Le document peut ensuite être traité et les résultats de ces traitements peuvent être réincorporés dans le document tel qu'il sera présenté.
 
 Pour déclancher notre code au bon moment il suffit découter un évènement pariculié.
-Nous allons ajouter un écouteur sur l'objet window, pour comprendre cette évènement je vous invite à regarder cette page <http://www.w3schools.com/jsref/event_onload.asp>.
+Nous allons ajouter un écouteur sur l'objet document, pour comprendre cette évènement je vous invite à regarder cette page <http://learn.jquery.com/using-jquery-core/document-ready/>.
 
 
-        window.addEventListener('load',function(){
-            document.getElementById('hello').innerHTML = "Hello World !";
-            document.getElementById('hello').addEventListener('click', function (event) {
+        jQuery(document).ready(function () {
+            jQuery('#hello').html("Hello World !");
+            jQuery('#hello').off('click').on('click', function (event) {
                 event.preventDefault();
-                event.target.style.backgroundColor = "#00FFFF";
-
+                jQuery(event.target).css({
+                    'background-color': '#00FFFF'
+                });
             });
         });
 
 
 Cette évènement déclanche l'éxécution du code lorsque le DOM est prèt.
-Il n'est pas spécifique à l'objet `window`, il peut marcher sur d'autres éléments comme :
-
-* `body`
-* `frame`
-* `frameset`
-* `iframe`
-* `img`
-* `input type="image"`
-* `link`
-* `script`
-* `style`
 
 
-<div class="alert alert-info">Vous pouvez retrouver le fichier ici https://gist.github.com/mfrancois/9076206#file-app_etape_5-js</div>
+<div class="alert alert-info">Vous pouvez retrouver le fichier ici https://gist.github.com/mfrancois/6d47fb64847e7c2fe0aa#file-app_etape_5-js</div>
 
 <a name="doc-morpion"></a>
 ## Tic Tac Toe
-Dans cette partie nous allons crée une morpion (Tic Tac Toe de son vrai nom). Vous pouvez le foir en fonctionnement sur la page de démo en ligne <http://fiddle.jshell.net/wQG7a/>.
+Dans cette partie nous allons crée une morpion (Tic Tac Toe de son vrai nom). Vous pouvez le foir en fonctionnement sur la page de démo en ligne <http://jsfiddle.net/Yhm9a/>.
 Avant de commencer il faut réfléchir à quoi nous avons besoins.
 Généralement je travail sur papier avant même de coder.
 
@@ -382,7 +350,6 @@ Remplacer le contenu de `app.js` par :
 
 
 L'intégralité de cette structure est expliqué sur la page [Application (avec jQuery)](/javascript/jquery/default/prototype).
-Dans notre cas nous n'utiliserons que la structure mais pas jQuery.
 
 **Par quoi commencer ?**
 
@@ -401,25 +368,31 @@ Ajoutez le code suivant dans la partie prototype  :
         symBole: ['X', 'O'],
         currentPlayer: 1,
         numWin: 3,
-        idReset: 'reset',
-        idGrid: 'grid',
-        idCurrentPlayer: 'currentPlayer',
+        idReset: '#reset',
+        idGrid: '#grid',
+        idCurrentPlayer: '#currentPlayer',
         finished: false,
 
         // --------------------------------------------------------------------------------------------
         init: function () {
-            window.addEventListener('load', function () {
-                app.init_event();
-            });
+            jQuery(document).ready(jQuery.proxy(this.onReady,this))
+        },
+
+
+        // --------------------------------------------------------------------------------------------
+
+        onReady: function(){
+            this.init_event();
+            this.nextPlayer();
         },
 
         // --------------------------------------------------------------------------------------------
 
         init_event: function () {
-            document.getElementById(this.idGrid).addEventListener('click', function (event) {
-                app.onClick(event);
-            });
+            jQuery(this.idGrid).off('click').on('click',jQuery.proxy(this.onClick,this))
+            jQuery(this.idReset).off('click').on('click',jQuery.proxy(this.onReset,this))
         },
+
 
 Paramètres | Fonctionnement
 ---------- | -------------
@@ -431,30 +404,32 @@ idGrid | Identifiant du tableau
 idCurrentPlayer | Identifiant de la zone qui affiche à qui est le tour (que nous vérons par la suite).
 finished | Indique si la partie est fini ou non.
 
+
+<div class="alert alert-warning">jQuery.proxy permet d'appeller une fonction en gardant le scope de l'objet.</div>
+
 init
 ----
 Nous constatont que cette méthode lance l'initialisation des évènements lorsque le DOM est près.
+
+onReady
+-------
+Appellé pour lancer l'application.
+
 
 init_event
 ----------
 Attache l'évènement au talbeau, lors du disptache la méthode appelé est `onClick`.
 
 
-    init_event: function () {
-        document.getElementById(this.idGrid).addEventListener('click', function (event) {
-            app.onClick(event);
-        });
-        document.getElementById(this.idReset).addEventListener('click', function (event) {
-            app.onReset(event);
-        });
-    },
 
-
+       init_event: function () {
+           jQuery(this.idGrid).off('click').on('click',jQuery.proxy(this.onClick,this))
+           jQuery(this.idReset).off('click').on('click',jQuery.proxy(this.onReset,this))
+       },
 
 
 onClick
 -------
-
 Cette méthode pert dans un premier temps de vérifier si la partie est fini.
 
 * Si c'est le cas il ne se passe rien.
@@ -464,30 +439,31 @@ Cette méthode pert dans un premier temps de vérifier si la partie est fini.
 
         onClick: function (event) {
             event.preventDefault();
-            var elt = event.target;
+            var $elt = jQuery(event.target);
 
             if (this.finished) {
                 return false;
             }
 
-            if (this.checkValidDom(elt) && elt.tagName.toUpperCase() == 'TD') {
-                if (this.isAlreadyUse(elt)) {
+            if (this.checkValidDom($elt) && $elt.prop("tagName").toUpperCase() == 'TD') {
+                if (this.isAlreadyUse($elt)) {
                     return false;
                 }
 
-                this.check(elt);
+                this.check($elt);
             }
         },
 
+
         checkValidDom: function (domElement) {
-            if (typeof(domElement) != 'undefined' && domElement != null) {
+            if (typeof(domElement) != 'undefined' && domElement != null && domElement != '') {
                 return true;
             }
             return false;
         }
 
-
 <div class="alert alert-info">Controlle si l'élément n'est pas indéfinie ou null. A garder de côté car on s'en sert souvent en javascript.</div>
+<div class="alert alert-warning">Par convention les variables jQuery sont préfixé par $, ce qui nous permet de distinguer qu'on peut utiliser les méthodes jQuery sur ces derniers.</div>
 
 
 Une fois tous ces controles passé on lance le cochage de la case à l'aide de `check`.
@@ -497,9 +473,9 @@ isAlreadyUse
 ------------
 Controle juste si l'élément est vide ou non pour donner la possibiliter de le remplir.
 
-    isAlreadyUse: function (elt) {
+    isAlreadyUse: function ($elt) {
 
-        if (this.checkValidDom(elt) && elt.innerHTML != '') {
+        if (this.checkValidDom($elt) && $elt.html() != '') {
             return true;
         }
 
@@ -513,11 +489,17 @@ check
 Cette méthode remplis à l'aide du symbole associé au joueur et lance la méthode qui permet de savoir si on à gagné.
 Sinon c'est au joueur suivant.
 
-    check: function (elt) {
-        if (this.checkValidDom(elt) === false) {
+    check: function ($elt) {
+        if (this.checkValidDom($elt) === false) {
             return false;
         }
-        elt.innerHTML = this.symBole[this.currentPlayer];
+
+        $elt.css({
+            "transform":"rotateY(180deg)",
+            "transition": "0.6s",
+            "transform-style": "preserve-3d"
+        });
+        $elt.html(this.symBole[this.currentPlayer]);
 
         if (this.isWinGame()) {
             this.finished = true;
@@ -553,16 +535,16 @@ Dans la méthode `isWinGame` nous allons faire appel à trois méthodes. Une mé
 
 
     isWinGame: function () {
-        var table = document.getElementById(this.idGrid);
-        var lines = table.getElementsByTagName('TR');
+        var $table = jQuery(this.idGrid);
+        var $lines = jQuery('tr',$table);
 
-        if (this.isWinLines(lines)) {
+        if (this.isWinLines($lines)) {
             return true;
         }
-        if (this.isWineCols(lines)) {
+        if (this.isWineCols($lines)) {
             return true;
         }
-        if (this.isWinDiagonal(lines)) {
+        if (this.isWinDiagonal($lines)) {
             return true;
         }
         return false;
@@ -573,13 +555,13 @@ isWinLines
 ----------
 
 
-    isWinLines: function (lines) {
-        if (this.checkValidDom(lines) === false) {
+    isWinLines: function ($lines) {
+        if (this.checkValidDom($lines) === false) {
             return false;
         }
 
-        for (var i = 0; i < lines.length; i++) {
-            if (this.isWinLine(lines[i])) {
+        for (var i = 0; i < $lines.length; i++) {
+            if (this.isWinLine(jQuery($lines[i]))) {
                 return true;
             }
         }
@@ -587,14 +569,14 @@ isWinLines
         return false;
     },
 
-    isWinLine: function (line) {
-        if (this.checkValidDom(line) === false) {
+    isWinLine: function ($line) {
+        if (this.checkValidDom($line) === false) {
             return false;
         }
 
-        var col = line.getElementsByTagName('TD');
-        for (var i = 0; i < col.length; i++) {
-            if (col[i].innerHTML != this.symBole[this.currentPlayer]) {
+        var $col = jQuery('td',$line);
+        for (var i = 0; i < $col.length; i++) {
+            if (jQuery($col[i]).html() != this.symBole[this.currentPlayer]) {
                 return false;
             }
         }
@@ -622,25 +604,25 @@ isWineCols
 ----------
 
 
-     isWineCols: function (lines) {
-        for (var col = 0; col < this.numWin; col++) {
-            var isSame = true;
+  isWineCols: function ($lines) {
+         for (var col = 0; col < this.numWin; col++) {
+             var isSame = true;
 
-            for (var i = 0; i < lines.length; i++) {
-                var cols = lines[i].getElementsByTagName('TD');
-                if (cols[col].innerHTML != this.symBole[this.currentPlayer]) {
-                    isSame = false;
-                    break;
-                }
-            }
+             for (var i = 0; i < $lines.length; i++) {
+                 var $cols = jQuery('td',$lines[i]);
+                 if (jQuery($cols[col]).html() != this.symBole[this.currentPlayer]) {
+                     isSame = false;
+                     break;
+                 }
+             }
 
-            if (isSame === true) {
-                return isSame;
-            }
-        }
+             if (isSame === true) {
+                 return isSame;
+             }
+         }
 
-        return false;
-    },
+         return false;
+     },
 
 Cette fois il faut parcourir colonne par colonne pour déterminer que les symboles sont celui du joueur courrent.
 Ce qui signifie que l'ordre d'exécution est :
@@ -662,10 +644,10 @@ isWinDiagonal
 ------------
 
 
-    isWinDiagonal: function (lines) {
+    isWinDiagonal: function ($lines) {
         for (var col = 0; col < this.numWin; col++) {
-            var cols = lines[col].getElementsByTagName('TD');
-            if (cols[col].innerHTML != this.symBole[this.currentPlayer]) {
+            var $cols = jQuery('td',$lines[col]);
+            if (jQuery($cols[col]).html() != this.symBole[this.currentPlayer]) {
                 return false;
             }
         }
@@ -692,13 +674,13 @@ Dans le fichier app.js
 ----------------------
 
     onReset: function (event) {
-        var table = document.getElementById(this.idGrid);
-        var lines = table.getElementsByTagName('TR');
+        var $table = jQuery(this.idGrid);
+        var $lines = jQuery('tr',$table);
 
-        for (var i = 0; i < lines.length; i++) {
-            var cols = lines[i].getElementsByTagName('TD');
-            for (var j = 0; j < cols.length; j++) {
-                cols[j].innerHTML = '';
+        for (var i = 0; i < $lines.length; i++) {
+            var $cols = jQuery('td',$lines[i]);
+            for (var j = 0; j < $cols.length; j++) {
+                jQuery($cols[j]).html('');
             }
         }
 
@@ -706,19 +688,24 @@ Dans le fichier app.js
         this.nextPlayer();
     },
 
+    check: function ($elt) {
+        if (this.checkValidDom($elt) === false) {
+            return false;
+        }
 
-    check: function (elt) {
-            if (this.checkValidDom(elt) === false) {
-                return false;
-            }
-            elt.innerHTML = this.symBole[this.currentPlayer];
+        $elt.css({
+            "transform":"rotateY(180deg)",
+            "transition": "0.6s",
+            "transform-style": "preserve-3d"
+        });
+        $elt.html(this.symBole[this.currentPlayer]);
 
-            if (this.isWinGame()) {
-                this.finished = true;
-                alert('Player ' + (this.currentPlayer + 1) + ' wins !!!');
-            } else {
-                this.nextPlayer();
-            }
+        if (this.isWinGame()) {
+            this.finished = true;
+            alert('Player ' + (this.currentPlayer + 1) + ' wins !!!');
+        } else {
+            this.nextPlayer();
+        }
 
     },
 
