@@ -37,7 +37,7 @@ Au long de ce premier tutorial j'utilise des fonctions qui fontionnent sur des n
 ## GIT
 
 Dans un premier temps vous devez récupérer le projet.
-Pour se faire il vous suffit de taper la commande suivante
+Pour se faire il vous suffit de taper la commande suivante :
 
     git clone -v --recurse-submodules --progress --branch tutorial/step_00 "https://github.com/mfrancois/javascript-tutorial.git"
 
@@ -67,7 +67,6 @@ Dans cet exercice nous allons voir comment manipuler des éléments du `DOM` et 
 #### Etape 1 : Affiche
 Dans le monde de la programmation, nous commençons généralement par l'affichage du mot "Hello World".
 Cette convention assez simple permet une utilisation de base de chaque langage.
-
 Dans un premier temps, nous allons juste afficher cette phrase "Hello World" dans une alerte.
 Pour se faire; ajoutez le code suivant dans la balise body :
 
@@ -75,15 +74,15 @@ Pour se faire; ajoutez le code suivant dans la balise body :
         alert('Hello World !');
     </script>
 
-Si vous exécutez la page dans votre navigateur <http://localhost/javascript-tutorial/>, vous devriez voir
+Si vous exécutez la page dans votre navigateur <http://localhost/javascript-tutorial/>, vous devriez voir :
+
+
+![alert](/markdown/javascript/_images/jquery/tutorial/step_0/alert.jpg)
 
 <div class="alert alert-warning">
 L'utilisation de localhost n'est possible que si vous avez un serveur local type Uwamp ou Wamp d'installé.
 Je vous le conseil car par la suite, vous risquez d'être bloqués par les protocoles de sécurité du navigateur.
 </div>
-
-![alert](/markdown/javascript/_images/jquery/tutorial/step_0/alert.jpg)
-
 <div class="alert alert-info">Vous pouvez retrouver le fichier ici https://gist.github.com/mfrancois/9076206#file-etape_1-html</div>
 
 <a name="doc-dom"></a>
@@ -129,7 +128,6 @@ Dans notre cas, nous nous en servons pour injecter le contenu de la chaîne dans
 ### Etape 3 : Les évènements
 Alors qu'est ce qu'un évènement.
 C'est très simple, un évènement est une action qui déclanche un appel vers une liste de fonction.
-
 Vous me direz qu'elle est l'utilité ? Simplement détecter quand un utilisateur tape sur son clavier, ou alors quand il clique sur un élément ou même s'il redimentionne son navigateur.
 Il faut garder à l'esprit que le javascript est un langage client et donc il permet d'intéragir avec lui.
 
@@ -159,7 +157,7 @@ Très pratique quand vous utilisez des évènements de "click" sur des liens.
     event.target.style.backgroundColor = "#00FFFF";
 
 Permet de changer la couleur d'arrière plan sur un élément du DOM.
-Pour avoir plus de details sur les informations contenu dans `style`, je vous invite à aller sur <http://www.w3schools.com/jsref/dom_obj_style.asp>
+Pour avoir plus de details sur les informations contenu dans `style`, je vous invite à aller sur <http://www.w3schools.com/jsref/dom_obj_style.asp>.
 
 #### Avant le click
 ![avant](/markdown/javascript/_images/jquery/tutorial/step_0/innerhtml.jpg)
@@ -186,7 +184,7 @@ Pour se faire, rien de plus simple :
         <script type="text/javascript" src="app.js" ></script>
 
 
-Vous devez vous retrouver avec deux fichiers; l'un qui ressemble à
+Vous devez vous retrouver avec deux fichiers; l'un qui ressemble à :
 
 
     <!DOCTYPE html>
@@ -208,7 +206,7 @@ Vous devez vous retrouver avec deux fichiers; l'un qui ressemble à
 
 
 
-Et l'autre qui ressemble à
+Et l'autre qui ressemble à :
 
     document.getElementById('hello').innerHTML = "Hello World !";
     document.getElementById('hello').addEventListener('click',function(event){
@@ -224,8 +222,7 @@ Et l'autre qui ressemble à
 Là vous me dites que rien ne s'affiche.
 Ne paniquez pas, c'est tout à fait normal.
 Comme nous manipulons le DOM mais que ce dernier n'est pas construit, rien ne s'affiche puisqu'il ne trouve pas le div.
-
-Pour faire fonctionner ce code je vous invite à aller faire l'étape 5
+Pour faire fonctionner ce code je vous invite à aller faire l'étape 5.
 
 <a name="doc-init"></a>
 ### Etape 5 : Initialisation du code suite à l'externalisation
@@ -273,7 +270,6 @@ Il n'est pas spécifique à l'objet `window`, il peut marcher sur d'autres élé
 Dans cette partie, nous allons creer une morpion (Tic Tac Toe de son vrai nom). Vous pouvez le voir en fonctionnement sur la page de démo en ligne <http://fiddle.jshell.net/wQG7a/>.
 Avant de commencer, il faut réfléchir à quoi nous avons besoin.
 Généralement je travaille sur papier avant même de coder.
-
 Nous avons besoin de savoir le fonctionnement du morpion.
 
 >Les joueurs inscrivent tour à tour leur symbole sur une grille qui n'a pas de limites ou qui n'a que celles du papier sur lequel on joue. Le premier qui parvient à aligner trois de ses symboles gagne un point.
@@ -311,7 +307,7 @@ Je crée donc trois lignes et trois colonnes ce qui donne :
 
 
 Le souci est que vous ne voyez pas forcément le tableau.
-Pour le rendre visible je vais ajouter du css entre les balises `head`
+Pour le rendre visible je vais ajouter du css entre les balises `head` :
 
 
             <style>
@@ -332,7 +328,7 @@ Pour le rendre visible je vais ajouter du css entre les balises `head`
             </style>
 
 
-Vous devriez voir un tableau comme celui qui suit.
+Vous devriez voir un tableau comme celui qui suit :
 
 
 ![table](/markdown/javascript/_images/jquery/tutorial/step_0/table.jpg)

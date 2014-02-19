@@ -32,7 +32,7 @@ Je vous invite à créer une copie du repository pour travailler et une copie po
 ## GIT
 
 Dans un premier temps vous devez récupérer le projet.
-Pour se faire il vous suffit de taper la commande suivante
+Pour se faire il vous suffit de taper la commande suivante :
 
     git clone -v --recurse-submodules --progress --branch tutorial/step_01 "https://github.com/mfrancois/javascript-tutorial.git"
 
@@ -107,7 +107,6 @@ Je vous conseil d'utiliser `jQuery`, qui permet d'évitez les conflits avec d'au
 ### Etape 3 : Les évènements
 Alors qu'est ce qu'un évènement.
 C'est très simple, un évènement est une action qui déclanche un appel vers une liste de fonction.
-
 Vous me direz qu'elle est l'utilité ? Simplement détecter quand un utilisateur tape sur son clavier, ou alors quand il clique sur un élément ou même s'il redimentionne son navigateur.
 Il faut garder à l'esprit que le javascript est un langage client et donc il permet d'intéragir avec lui.
 
@@ -168,7 +167,7 @@ Pour se faire, rien de plus simple :
         <script type="text/javascript" src="app.js" ></script>
 
 
-Vous devez vous retrouver avec deux fichiers; l'un qui ressemble à
+Vous devez vous retrouver avec deux fichiers; l'un qui ressemble à :
 
 
     <!DOCTYPE html>
@@ -184,7 +183,7 @@ Vous devez vous retrouver avec deux fichiers; l'un qui ressemble à
     </html>
 
 
-Et l'autre qui ressemble à
+Et l'autre qui ressemble à :
 
     jQuery('#hello').html("Hello World !");
     jQuery('#hello').off('click').on('click',function(event){
@@ -200,8 +199,7 @@ Et l'autre qui ressemble à
 Là vous me dites que rien ne s'affiche.
 Ne paniquez pas, c'est tout à fait normal.
 Comme nous manipulons le DOM mais que ce dernier n'est pas construit, rien ne s'affiche puisqu'il ne trouve pas le div.
-
-Pour faire fonctionner ce code je vous invite à aller faire l'étape 5
+Pour faire fonctionner ce code je vous invite à aller faire l'étape 5.
 
 <a name="doc-init"></a>
 ### Etape 5 : Initialisation du code suite à l'externalisation
@@ -239,7 +237,6 @@ Cet évènement déclanche l'éxécution du code lorsque le DOM est pret.
 Dans cette partie, nous allons creer une morpion (Tic Tac Toe de son vrai nom). Vous pouvez le voir en fonctionnement sur la page de démo en ligne <http://fiddle.jshell.net/wQG7a/>.
 Avant de commencer, il faut réfléchir à quoi nous avons besoin.
 Généralement je travaille sur papier avant même de coder.
-
 Nous avons besoin de savoir le fonctionnement du morpion.
 
 >Les joueurs inscrivent tour à tour leur symbole sur une grille qui n'a pas de limites ou qui n'a que celles du papier sur lequel on joue. Le premier qui parvient à aligner trois de ses symboles gagne un point.
@@ -277,7 +274,7 @@ Je crée donc trois lignes et trois colonnes ce qui donne :
 
 
 Le souci est que vous ne voyez pas forcément le tableau.
-Pour le rendre visible je vais ajouter du css entre les balises `head`
+Pour le rendre visible je vais ajouter du css entre les balises `head` :
 
 
             <style>
@@ -298,7 +295,7 @@ Pour le rendre visible je vais ajouter du css entre les balises `head`
             </style>
 
 
-Vous devriez voir un tableau comme celui qui suit.
+Vous devriez voir un tableau comme celui qui suit :
 
 
 ![table](/markdown/javascript/_images/jquery/tutorial/step_0/table.jpg)
