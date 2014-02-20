@@ -1,4 +1,4 @@
-# 0 - Manipulation de base
+# 1 - Manipulation de base avec jQuery
 
 - [Content](#doc-content)
 - [GIT](#doc-git)
