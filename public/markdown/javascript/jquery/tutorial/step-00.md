@@ -280,6 +280,9 @@ Nous avons donc besoin :
 * De deux symboles `X` et `O`.
 * De deux joueurs.
 
+<iframe width="100%" height="300" src="http://jsfiddle.net/wQG7a/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
 <a name="doc-grille"></a>
 ### Grille
 Nous allons créer la grille.

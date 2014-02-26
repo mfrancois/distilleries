@@ -234,7 +234,7 @@ Cet évènement déclanche l'éxécution du code lorsque le DOM est pret.
 
 <a name="doc-morpion"></a>
 ## Tic Tac Toe
-Dans cette partie, nous allons creer une morpion (Tic Tac Toe de son vrai nom). Vous pouvez le voir en fonctionnement sur la page de démo en ligne <http://fiddle.jshell.net/wQG7a/>.
+Dans cette partie, nous allons creer une morpion (Tic Tac Toe de son vrai nom). Vous pouvez le voir en fonctionnement sur la page de démo en ligne <http://fiddle.jshell.net/wQG7a/2/>.
 Avant de commencer, il faut réfléchir à quoi nous avons besoin.
 Généralement je travaille sur papier avant même de coder.
 Nous avons besoin de savoir le fonctionnement du morpion.
@@ -246,6 +246,8 @@ Nous avons donc besoin :
 * Une grille de 3x3.
 * De deux symboles `X` et `O`.
 * De deux joueurs.
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/wQG7a/2/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 <a name="doc-grille"></a>
 ### Grille
