@@ -25,8 +25,10 @@
             @include('project.menu')
         </div>
         <div class="col-md-9" role="main">
-
+            @include('footer.adsense')
             @yield('content')
+            <div class="page-header"></div>
+            @include('footer.adsense')
             @include('comment.discqus')
         </div>
     </div>
